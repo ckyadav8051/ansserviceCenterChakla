@@ -14,3 +14,15 @@ Array.from(boxes).forEach(e =>{
     e.style.backgroundColor = getRandomColor();
    // e.style.color = getRandomColor();
 })
+ // 1. Get the elements
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    // 2. Add click event listener to the hamburger icon
+    menuToggle.addEventListener('click', () => {
+        // Toggle the 'open' class on the menu
+        navMenu.classList.toggle('open');
+        
+        // Optionally, toggle a class on the icon itself for animation
+        menuToggle.classList.toggle('is-active'); 
+    });

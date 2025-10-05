@@ -15,32 +15,198 @@
 </head>
 
 <body>
-    <header>
-        <div class="nav-parent">
-            <div class="navbar">
-                <div class="nav-heading">
-                    <a href="#" target="_main"><img class="nav-logo border-icon " src="anslogo.jpg" alt="image"></a>
-                    <p class="border-icon">WELCOME TO A N S SERVICE || <a href="#" target="_main" class="border-icon"
-                            style="color: white;">ansservicecenter.com </a></p>
-                </div>
-                <div class="nav-button">
-                    <ul class="navanchor">
-                        <li> <a class="an border-icon" href="#" target="_main"> Home </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Latest Job </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Admit Card </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Answer Key </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Admission </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> About Us </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Help </a></li>
-                        <li> <a class="an border-icon" href="#" target="_main"> Contact Me for feedback</a></li>
+   
+<style>
+/* -------------------------------------- */
+/* --- 1. COMMON/DEFAULT STYLES (Desktop First) --- */
+/* -------------------------------------- */
+body{
+    margin: 0;
+    padding: 0;
+    
+    text-align: center;
+}
 
-                    </ul>
-                </div>
+/* .nav-parent {
+    /* height: 112px; - Removed fixed height for flexibility */
+    /* margin-bottom: 200px; */
+/* } */ 
+.navbar {
+    background-color: #3E3F29;
+    display: flex;
+    /* justify-content: space-between; /* Added to spread logo and links */
+    align-items: center; /* Vertically align items */
+    position: fixed;
+    color: white;
+    width: 100vw;
+    border-bottom: 3px solid rgb(234, 193, 193);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /* padding: 5px 15px; Added horizontal padding */
+    /* box-sizing: border-box; */
+    padding-top: 5px;
+    padding-right: 10px; 
+    padding-left: 5px;
+   
+    
+}
+.nav-heading {
+    display: flex;
+    align-items: center;
+    font-size: 15px; /* Reduced size for better fit */
+    font-weight: bolder;
+    /* padding-bottom: 20px; /* Removed, not needed with new flex layout */
+}
+.nav-title {
+    margin: 0 10px;
+    font-size: 1rem;
+}
+.nav-logo {
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.navanchor {
+    list-style: none; /* Removed bullet points */
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.navanchor li {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0 8px; /* Spacing between links */
+}
+.navanchor li a {
+    padding: 10px 0;
+    display: block;
+}
+
+/* Hide hamburger toggle on desktop */
+.menu-toggle {
+    display: none; 
+}
+.nav-button {
+    /* flex-grow: 1; /* Allow nav-button to take remaining space */
+    margin-left: auto; /* Push nav-button to the right */
+    display: flex;
+    align-items: center;
+}
+
+/* -------------------------------------- */
+/* --- 2. MOBILE VIEW (MAX-WIDTH: 768px) --- */
+/* -------------------------------------- */
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Space out logo and hamburger icon */
+    }
+    .nav-heading {
+        font-size: 1rem;
+    }
+    .nav-title {
+        font-size: 0.9rem; /* Further reduce font size for small screens */
+    }
+
+    /* Show Hamburger Icon */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        /* margin-top: auto; */
+        margin-left: auto; /* Push icon to the far right */
+    }
+    .menu-toggle .bar {
+        width: 80%;
+        height: 3px;
+        background-color: white;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        
+    }
+
+    /* Sidebar Menu Styling */
+    .nav-button {
+        /* Initially hide the menu off-screen */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Hidden off screen (width is 250px) */
+        width: 150px;
+        height: max-content;
+        background-color: #3E3F29; /* Same color as header */
+        flex-direction: column;
+        padding-top: 0px; /* Push links below header */
+        transition: right 0.3s ease-in-out; /* Smooth transition */
+        margin-top: 65px;
+        z-index: 1000;
+        display: block; /* Change display from flex to block for vertical stacking */
+    }
+
+    /* When menu is open, this class is added by JS */
+    .nav-button.open {
+        right: 0;
+    }
+
+    .navanchor {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start;
+        width: 100%;
+    }
+    .navanchor li {
+        width: 100%;
+        padding: 2.5px 5px ;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: inline-block;
+    }
+    .nav-heading p{
+        font-size: 15px;
+    }
+    
+} 
+</style>
 
 
+    
+<header>
+    <div class="nav-parent">
+        <div class="navbar">
+            <div class="nav-heading">
+                <a href="#" target="_main"><img class="nav-logo border-icon" src="anslogo.jpg" alt="image"></a>
+                <p class="nav-title border-icon">WELCOME TO A N S SERVICE || <a href="#" target="_main" class="border-icon" style="color: white;">ansservicecenter.com </a></p>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            
+            <div class="nav-button" id="navMenu">
+                <ul class="navanchor">
+                    <li> <a class="an border-icon" href="#" target="_main"> Home </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Latest Job </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Admit Card </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Answer Key </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Admission </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> About Us </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Help </a></li>
+                    <li> <a class="an border-icon" href="#" target="_main"> Contact Me for feedback</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </div>
+</header>
+
     
     <div class="container-1">
         <div style="margin-bottom: 50px;"><h1>बेहतर अनुभव के लिए इस वेबसाइट को अपने कंप्यूटर पर खोलें। अभी यह विकास के चरण में है।</h1>

@@ -7,71 +7,20 @@ body {
   /* background-color: rgb(245, 245, 245); */
   font-family: sans-serif;
 }
-.nav-parent {
-  height: max-content;
-  margin-bottom: 200px;
-  height: 112px;
-}
 
-.navbar {
-  background-color: #3e3f29;
-  display: flex;
-  position: fixed;
-  color: white;
-  height: max-content;
-  width: 100vw;
-  flex-wrap: wrap;
-  border-bottom: 3px solid rgb(234, 193, 193);
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding-bottom: 8px;
-}
-.nav-heading {
-  display: flex;
-  height: fit-content;
 
-  align-items: center;
-  font-size: 1.7rem;
-  font-weight: bolder;
-  padding-bottom: 20px;
-  margin-left: 5px;
-}
-.nav-logo {
-  height: 40px;
-  border-radius: 10px;
-  margin: 5px;
-}
+
 a {
   text-decoration: none;
 }
-.navanchor {
-  display: flex;
-  align-self: flex-end;
-  width: 100%;
 
-  justify-content: space-evenly;
-}
-.navanchor a {
-  color: white;
-}
-.nav-button {
-  display: inline-block;
-  align-self: flex-end;
-  margin-left: 15%;
 
-  width: 100%;
-  display: flex;
-}
-.navanchor li {
-  text-decoration: none;
-  display: inline-block;
 
-  font-size: 1.3rem;
-}
+
 .container-1 {
   height: fit-content;
   /* background-color:chocolate; */
-  margin-top: 5px;
+  margin-top: 150px;
   padding-top: 50px;
   padding-bottom: 130px;
   width: 80%;
@@ -88,32 +37,15 @@ a {
   .container-1{
     width: auto;
   }
-  .navbar{
-    width: min-content;
-    height: auto;
-    position:relative;
-    
-
-  }
+ 
   .job1{
     height: max-content;
 
   }
-  .navbar p{
-    font-size:15px;
+ 
+ 
 
-  }
-  .nav-button {
-    margin-left: 2px;
-  }
-  .navanchor li  {
-    font-size: 14px;
-    margin-left: 2px;
-    padding-left: 3px;
-  }
-  .navanchor{
-    margin-right: 3px;
-  }
+  
   .footer-div{
     width:fit-content;
     position: absolute;
